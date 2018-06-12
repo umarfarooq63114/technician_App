@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.umar.technician_app.Model.Product;
 import com.example.umar.technician_app.Model.Technician;
 
 import java.util.ArrayList;
@@ -33,9 +34,9 @@ import static android.content.ContentValues.TAG;
 public class TasksFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private TechnicianAdapter technicianAdapter;
+    private ProductAdapter productAdapter;
     View view;
-    private List<Technician> own;
+    private List<Product> own;
 
     public TasksFragment() {
     }
@@ -47,11 +48,11 @@ public class TasksFragment extends Fragment {
 
 
         recyclerView =(RecyclerView) view.findViewById(R.id.recyclerView);
-         technicianAdapter = new TechnicianAdapter(getContext(), own);
+         productAdapter = new ProductAdapter( own,getContext());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        recyclerView.setAdapter(technicianAdapter);
+        recyclerView.setAdapter(productAdapter);
         return  view;
 
     }
@@ -64,7 +65,9 @@ public class TasksFragment extends Fragment {
     float ratingbar = (float) 1.5;
 
       for (int i = 1; i <= 5; i++) {
-        own.add(new Technician("umar "+i, pic1, "lahore", (float) ratingbar, "online"));
+        own.add(new Product("SAMSUNG "+i, "MOBILE", pic1,
+                "Screen and microphone does not working and battery issue",
+                "Umar Farooq","03104187789","lahore"));
     }
 
 }

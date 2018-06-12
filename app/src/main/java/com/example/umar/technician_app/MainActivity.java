@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         tabLayout = findViewById(R.id.tablayout);
-        tabTasks = findViewById(R.id.tabTasks);
+       tabTasks = findViewById(R.id.tabTasks);
         tabStatus = findViewById(R.id.tabStatus);
         tabDetails = findViewById(R.id.tabDetails);
         viewPager = findViewById(R.id.viewPager);
@@ -42,8 +42,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 1){
+            }
+                 else if(tab.getPosition()==2)
+
+            {
 
             }
+
+        }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {

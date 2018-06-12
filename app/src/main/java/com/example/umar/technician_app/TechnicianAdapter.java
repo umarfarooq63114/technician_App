@@ -48,11 +48,24 @@ public class TechnicianAdapter extends RecyclerView.Adapter<TechnicianAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.technicianName.setText(users.get(position).getName());
-        holder.technicianCategory.setText(users.get(position).getCategory());
-        holder.technicianImage.setImageResource(users.get(position).getImage());
-        holder.ratingBar.setRating(users.get(position).getRatingBar());
-        holder.status.setText(users.get(position).getStatus());
+        holder.productName.setText(users.get(position).getName());
+        holder.productFault.setText(users.get(position).getCategory());
+        holder.productImage.setImageResource(users.get(position).getImage());
+
+
+
+
+
+
+
+
+
+       /* holder.recyclerViewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Ali baba", Toast.LENGTH_SHORT).show();
+            }
+        });*/
 
 
     }
@@ -60,22 +73,25 @@ public class TechnicianAdapter extends RecyclerView.Adapter<TechnicianAdapter.Vi
     @Override
     public int getItemCount() {
         return users.size();
+
+
+
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView technicianName, technicianCategory, status;
-        RatingBar ratingBar;
+        TextView productName,productBrand,productFault;
+        ImageView productImage;
         LinearLayout recyclerViewList;
-        ImageView technicianImage;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
-            technicianImage = itemView.findViewById(R.id.img);
-            technicianName = itemView.findViewById(R.id.tName);
-            technicianCategory = itemView.findViewById(R.id.tCategory);
-            ratingBar = itemView.findViewById(R.id.ratingBar);
-            status = itemView.findViewById(R.id.status);
+            productImage = itemView.findViewById(R.id.pImage);
+            productName = itemView.findViewById(R.id.pName);
+            productBrand = itemView.findViewById(R.id.pBrand);
+            productFault = itemView.findViewById(R.id.pFault);
+            recyclerViewList=itemView.findViewById(R.id.recyclerViewList);
 
         }
     }
